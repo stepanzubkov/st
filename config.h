@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "HackNerdFont:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = { "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
-static int borderpx = 2;
+static int borderpx = 5;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -107,7 +107,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 1;
 float alphaOffset = 0.0;
 float alphaUnfocus;
 
@@ -124,6 +124,20 @@ typedef struct {
  * foreground, background, cursor, reverse cursor
  */
 static const ColorScheme schemes[] = {
+	// One Half dark
+	{{"#282c34", "#e06c75", "#98c379", "#e5c07b",
+	  "#61afef", "#c678dd", "#56b6c2", "#dcdfe4",
+	  "#282c34", "#e06c75", "#98c379", "#e5c07b",
+	  "#61afef", "#c678dd", "#56b6c2", "#dcdfe4",
+	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
+
+	// One Half light
+	{{"#fafafa", "#e45649", "#50a14f", "#c18401",
+	"#0184bc", "#a626a4", "#0997b3", "#383a42",
+	  "#fafafa", "#e45649", "#50a14f", "#c18401",
+	  "#0184bc", "#a626a4", "#0997b3", "#383a42",
+	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
+
 	// st (dark)
 	{{"black", "red3", "green3", "yellow3",
 	  "blue2", "magenta3", "cyan3", "gray90",
@@ -136,20 +150,6 @@ static const ColorScheme schemes[] = {
 	  "#81a2be", "#b294bb", "#8abeb7", "#c5c8c6",
 	  "#666666", "#d54e53", "#b9ca4a", "#e7c547",
 	  "#7aa6da", "#c397d8", "#70c0b1", "#eaeaea",
-	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
-
-	// One Half dark
-	{{"#282c34", "#e06c75", "#98c379", "#e5c07b",
-	  "#61afef", "#c678dd", "#56b6c2", "#dcdfe4",
-	  "#282c34", "#e06c75", "#98c379", "#e5c07b",
-	  "#61afef", "#c678dd", "#56b6c2", "#dcdfe4",
-	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
-
-	// One Half light
-	{{"#fafafa", "#e45649", "#50a14f", "#c18401",
-      "#0184bc", "#a626a4", "#0997b3", "#383a42",
-	  "#fafafa", "#e45649", "#50a14f", "#c18401",
-	  "#0184bc", "#a626a4", "#0997b3", "#383a42",
 	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
 
 	// Solarized dark
@@ -208,8 +208,8 @@ static unsigned int cursorshape = 2;
  * Default columns and rows numbers
  */
 
-static unsigned int cols = 80;
-static unsigned int rows = 24;
+static unsigned int cols = 90;
+static unsigned int rows = 28;
 
 /*
  * Default colour and shape of the mouse cursor
