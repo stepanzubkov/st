@@ -2383,10 +2383,6 @@ main(int argc, char *argv[])
 
 run:
 	colorname = schemes[colorscheme].colors;
-	defaultbg = schemes[colorscheme].bg;
-	defaultfg = schemes[colorscheme].fg;
-	defaultcs = schemes[colorscheme].cs;
-	defaultrcs = schemes[colorscheme].rcs;
 
 	if (argc > 0) /* eat all remaining arguments */
 		opt_cmd = argv;
@@ -2409,6 +2405,12 @@ run:
 	xinit(cols, rows);
 	xsetenv();
 	selinit();
+
+    defaultbg = schemes[colorscheme].bg;
+    defaultfg = schemes[colorscheme].fg;
+    defaultcs = schemes[colorscheme].cs;
+    defaultrcs = schemes[colorscheme].rcs;
+
 	run();
 
 	return 0;
